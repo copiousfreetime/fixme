@@ -1,0 +1,8 @@
+HISTORY.rdoc
+LICENSE
+Manifest.txt
+README.rdoc
+Rakefile
+lib/fixme.rb
+spec/spec_helper.rb
+spec/version_spec.rb
