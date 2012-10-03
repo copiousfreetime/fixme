@@ -34,8 +34,8 @@ easiest way to contribute.
 
 
 [GitHub Account]: https://github.com/signup/free "GitHub Signup"
-[GitHub Issues]: https://github.com/copiosfreetime/fixme/isssues "Fixme Issues"
-[new issue]: https://github.com/copiosfreetime/fixme/isssues/new "New Fixme Issue"
-[gist]: https://gist.github.com/ "New Gist"
-[repo]: http://github.com/copiousfreetime/fixme "Fixme Repo"
-[pull request]: https://help.github.com/articles/using-pull-requests "Using Pull Requests"
+[GitHub Issues]:  https://github.com/copiousfreetime/fixme/issues "Fixme Issues"
+[new issue]:      https://github.com/copiousfreetime/fixme/issues/new "New Fixme Issue"
+[gist]:           https://gist.github.com/ "New Gist"
+[repo]:           https://github.com/copiousfreetime/fixme "Fixme Repo"
+[pull request]:   https://help.github.com/articles/using-pull-requests "Using Pull Requests"
