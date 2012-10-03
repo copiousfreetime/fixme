@@ -5,6 +5,5 @@ if RUBY_VERSION >= '1.9.2' then
 end
 
 gem 'minitest'
-#require 'FIXME'
 require 'minitest/autorun'
 require 'minitest/pride'
