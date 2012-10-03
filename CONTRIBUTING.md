@@ -30,8 +30,12 @@ easiest way to contribute.
     * `rake develop` to get started, or if you prefer bundler `rake develop:using_bunder && bundle`.
     * `rake test` to run tests
 * Make sure that `rake test` passes. Its important, I said it twice.
+* Add yourself to the contributors section below.
 * Submit your [pull request][].
 
+# Contributors
+
+* Jeremy Hinegardner
 
 [GitHub Account]: https://github.com/signup/free "GitHub Signup"
 [GitHub Issues]:  https://github.com/copiousfreetime/fixme/issues "Fixme Issues"
