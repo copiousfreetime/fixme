@@ -1,6 +1,6 @@
 # vim: syntax=ruby
 
-This.name     = "FIXME"
+This.name     = "fixme"
 This.author   = "Jeremy Hinegardner"
 This.email    = "jeremy@copiousfreetime.org"
 This.homepage = "http://github.com/copiousfreetime/#{ This.name }"
