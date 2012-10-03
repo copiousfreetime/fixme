@@ -121,6 +121,7 @@ else
     Util.task_warning( 'simplecov' )
   end
 end
+
 #------------------------------------------------------------------------------
 # Manifest - We want an explicit list of thos files that are to be packaged in
 #            the gem. Most of this is from Hoe.
@@ -150,6 +151,22 @@ namespace 'manifest' do
     files.reject! { |f| f =~ This.exclude_from_manifest }
     File.open( "Manifest.txt", "w" ) do |f|
       f.puts files.join("\n")
+    end
+  end
+end
+
+#------------------------------------------------------------------------------
+# Fixme - look for fixmes and report them
+#------------------------------------------------------------------------------
+task :fixme => 'manifest:check' do
+  Util.read_manifest.each do |file|
+    next if file == File.basename( __FILE__ )
+
+    puts "FIXME: Rename #{file}" if file =~ /fixme/i
+
+    IO.readlines( file ).each_with_index do |line, idx|
+      prefix = "FIXME: #{file}:#{idx+1}".ljust(42)
+      puts "#{prefix} => #{line.strip}" if line =~ /fixme/i
     end
   end
 end
