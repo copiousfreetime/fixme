@@ -1,3 +1,4 @@
+CONTRIBUTING.md
 HISTORY.rdoc
 LICENSE
 Manifest.txt
