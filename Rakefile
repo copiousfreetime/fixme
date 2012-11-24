@@ -184,7 +184,8 @@ This.gemspec['ruby'] = Gem::Specification.new do |spec|
   spec.test_files  = spec.files.grep(/^spec/)
 
   spec.extra_rdoc_files += spec.files.grep(/(txt|rdoc)$/)
-  spec.rdoc_options = [ "--main"  , 'README.rdoc', ]
+  spec.rdoc_options = [ "--main"  , 'README.rdoc',
+                        "--markup", "tomdoc" ]
 
   # The Runtime Dependencies
   # FIXME
