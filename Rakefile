@@ -295,6 +295,10 @@ BEGIN {
       warn "WARNING: '#{task}' tasks are not defined. Please run 'rake develop'"
     end
 
+    def self.project_root
+      File.expand_path( File.dirname(__FILE__) )
+    end
+
     def self.read_manifest
       abort "You need a Manifest.txt" unless File.readable?( "Manifest.txt" )
       File.readlines( "Manifest.txt" ).map { |l| l.strip }
