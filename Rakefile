@@ -19,13 +19,7 @@ namespace :develop do
     require 'rubygems/dependency_installer'
     installer = Gem::DependencyInstaller.new
 
-    # list these here instead of gem dependencies since there is not a way to
-    # specify ruby version specific dependencies
-    if RUBY_VERSION < "1.9.2"
-      Util.platform_gemspec.add_development_dependency( 'rcov', '~> 0.9.11' )
-    else
-      Util.platform_gemspec.add_development_dependency( 'simplecov', '~> 0.6.4' )
-    end
+    Util.set_coverage_gem
 
     puts "Installing gem depedencies needed for development"
     Util.platform_gemspec.dependencies.each do |dep|
@@ -95,7 +89,7 @@ end
 # Coverage - optional code coverage, rcov for 1.8 and simplecov for 1.9, so
 #            for the moment only rcov is listed.
 #------------------------------------------------------------------------------
-if RUBY_VERSION <= "1.9.2"
+if RUBY_VERSION < "1.9.0"
   begin
    require 'rcov/rcovtask'
    Rcov::RcovTask.new( 'coverage' ) do |t|
@@ -307,6 +301,16 @@ BEGIN {
 
     def self.platform_gemspec
       This.gemspec[This.platform]
+    end
+
+    def self.set_coverage_gem
+      # list these here instead of gem dependencies since there is not a way to
+      # specify ruby version specific dependencies
+      if RUBY_VERSION < "1.9.0"
+        Util.platform_gemspec.add_development_dependency( 'rcov', '~> 0.9.11' )
+      else
+        Util.platform_gemspec.add_development_dependency( 'simplecov', '~> 0.6.4' )
+      end
     end
   end
 
