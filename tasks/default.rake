@@ -15,7 +15,7 @@ namespace :develop do
 
     This.set_coverage_gem
 
-    puts "Installing gem depedencies needed for development"
+    puts "Installing gem dependencies needed for development"
     This.platform_gemspec.dependencies.each do |dep|
       if dep.matching_specs.empty? then
         puts "Installing : #{dep}"
@@ -43,7 +43,7 @@ namespace :develop do
   # Gemfiles are build artifacts
   CLOBBER << FileList['Gemfile*']
 end
-desc "Boostrap development"
+desc "Bootstrap development"
 task :develop => "develop:default"
 
 #------------------------------------------------------------------------------
@@ -111,7 +111,7 @@ else
 end
 
 #------------------------------------------------------------------------------
-# Manifest - We want an explicit list of thos files that are to be packaged in
+# Manifest - We want an explicit list of those files that are to be packaged in
 #            the gem. Most of this is from Hoe.
 #------------------------------------------------------------------------------
 namespace 'manifest' do
@@ -181,7 +181,7 @@ end
 
 #------------------------------------------------------------------------------
 # Release - the steps we go through to do a final release, this is pulled from
-#           a compbination of mojombo's rakegem, hoe and hoe-git
+#           a combination of mojombo's rakegem, hoe and hoe-git
 #
 # 1) make sure we are on the master branch
 # 2) make sure there are no uncommitted items
