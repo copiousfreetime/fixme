@@ -19,7 +19,7 @@ easiest way to contribute.
         * full ruby engine and version: `ruby -e 'puts RUBY_DESCRIPTION'`
         * operating system and version
         * version of fixme `ruby -e 'ruby -rubygems -e "require 'fixme'; puts Fixme::VERSION'`
-        * as much detail about the bug as possible so I can replicated it. Feel free
+        * as much detail about the bug as possible so I can replicate it. Feel free
           to link in a [gist][]
     * **New Feature**
         * What the new feature should do.
@@ -29,7 +29,7 @@ easiest way to contribute.
 * Lovingly craft your contribution:
     * `rake develop` to get started, or if you prefer bundler `rake develop:using_bunder && bundle`.
     * `rake test` to run tests
-* Make sure that `rake test` passes. Its important, I said it twice.
+* Make sure that `rake test` passes. It's important, I said it twice.
 * Add yourself to the contributors section below.
 * Submit your [pull request][].
 
