@@ -52,7 +52,7 @@ class ThisProject
   # path         - the relative path in the project of the file to parse
   # section_name - the section out of the file from which to parse data
   #
-  # Returns the text of the section as an array of paragraphs.
+  # Retuns the text of the section as an array of paragrphs.
   def section_of( file, section_name )
     re    = /^=+ (.*)$/
     sectional = project_path( file )
@@ -110,7 +110,7 @@ class ThisProject
     manifest_file.readlines.map { |l| l.strip }
   end
 
-  # Internal: Returns the gemspec associated with the current ruby platform
+  # Internal: Returns the gemspace associated with the current ruby platform
   def platform_gemspec
     gemspecs[platform]
   end
@@ -181,7 +181,7 @@ class ThisProject
     description_section.first
   end
 
-  # Internal: Return the full description text from the README
+  # Internal: Return the full description text from the READEM
   def description
     description_section.join(" ").tr("\n", ' ').gsub(/[{}]/,'').gsub(/\[[^\]]+\]/,'') # strip rdoc
   end
