@@ -137,17 +137,17 @@ class ThisProject
   end
 
   # Internal: Return the gemspec for the ruby platform
-  def ruby_gemspec(&block)
-    yielding_gemspec('ruby',&block)
+  def ruby_gemspec( core = core_gemspec, &block )
+    yielding_gemspec( 'ruby', core, &block )
   end
 
   # Internal: Return the gemspec for the jruby platform
-  def java_gemspec(&block)
-    yielding_gemspec('java',&block)
+  def java_gemspec( core = core_gemspec, &block )
+    yielding_gemspec( 'java', core, &block )
   end
 
-  def yielding_gemspec( key )
-    spec = gemspecs[key] ||= core_gemspec
+  def yielding_gemspec( key, core )
+    spec = gemspecs[key] ||= core.dup
     yield spec if block_given?
     return spec
   end
