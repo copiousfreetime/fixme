@@ -77,8 +77,8 @@ class ThisProject
   # path - the relative path of the file from the project root
   #
   # Returns the Pathname of the file
-  def project_path( relative_path )
-    project_root.join( relative_path )
+  def project_path( *relative_path )
+    project_root.join( *relative_path )
   end
 
   # Internal: The absolute path of this file
