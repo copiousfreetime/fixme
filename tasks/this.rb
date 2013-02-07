@@ -110,6 +110,13 @@ class ThisProject
     manifest_file.readlines.map { |l| l.strip }
   end
 
+  # Internal: Return the files that define the extensions
+  #
+  # Returns an Array
+  def extension_conf_files
+    manifest.grep( /extconf.rb\Z/ )
+  end
+
   # Internal: Returns the gemspace associated with the current ruby platform
   def platform_gemspec
     gemspecs[platform]
