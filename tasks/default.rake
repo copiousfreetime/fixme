@@ -56,6 +56,9 @@ begin
     t.libs         = %w[ lib spec ]
     t.pattern      = "spec/**/*_spec.rb"
   end
+
+  task :test_requirements
+  task :test => :test_requirements
   task :default => :test
 rescue LoadError
   This.task_warning( 'test' )
