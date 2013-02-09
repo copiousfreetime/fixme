@@ -223,7 +223,7 @@ task :gemspec do
 end
 
 # the gemspec is also a dev artifact and should not be kept around.
-CLOBBER << This.gemspec_file
+CLOBBER << This.gemspec_file.to_s
 
 # The standard gem packaging task, everyone has it.
 require 'rubygems/package_task'
