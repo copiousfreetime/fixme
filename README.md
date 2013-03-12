@@ -1,24 +1,24 @@
-== FIXME
+## FIXME
 
-* Homepage[https://github.com/copiousfreetime/FIXME/]
-* {Github Project}[https://github.com/copiousfreetime/FIXME]
+* [Homepage](https://github.com/copiousfreetime/FIXME/)
+* [Github Project](https://github.com/copiousfreetime/FIXME)
 * email jeremy at hinegardner dot org
 
-== DESCRIPTION
+## DESCRIPTION
 
  FIXME
 
-== FEATURES
+## FEATURES
 
   FIXME
 
-== Examples
+## Examples
 
-== ISC LICENSE
+## ISC LICENSE
 
 http://opensource.org/licenses/isc-license.txt
 
-Copyright (c) 2012 Jeremy Hinegardner
+Copyright (c) 2013 Jeremy Hinegardner
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
