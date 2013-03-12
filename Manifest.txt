@@ -8,4 +8,5 @@ lib/fixme.rb
 spec/spec_helper.rb
 spec/version_spec.rb
 tasks/default.rake
+tasks/extension.rake
 tasks/this.rb
