@@ -1,5 +1,6 @@
 # vim: syntax=ruby
 require 'rake/clean'
+require 'digest'
 #------------------------------------------------------------------------------
 # If you want to Develop on this project just run 'rake develop' and you'll
 # have all you need to get going. If you want to use bundler for development,
