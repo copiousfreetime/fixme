@@ -31,7 +31,7 @@ namespace :develop do
   # Create a Gemfile that just references the gemspec
   file 'Gemfile' => :gemspec do
     File.open( "Gemfile", "w+" ) do |f|
-      f.puts 'source :rubygems'
+      f.puts 'source "https://rubygems.org/"'
       f.puts 'gemspec'
     end
   end
