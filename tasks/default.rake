@@ -14,8 +14,6 @@ namespace :develop do
     require 'rubygems/dependency_installer'
     installer = ::Gem::DependencyInstaller.new
 
-    This.set_coverage_gem
-
     puts "Installing gem depedencies needed for development"
     This.platform_gemspec.dependencies.each do |dep|
       if dep.matching_specs.empty? then
