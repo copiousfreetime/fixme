@@ -145,6 +145,8 @@ class ThisProject
       spec.extra_rdoc_files += spec.files.grep(/(txt|rdoc|md)$/)
       spec.rdoc_options = [ "--main"  , 'README.md',
                             "--markup", "tomdoc" ]
+
+      spec.required_ruby_version = '>= 1.9.3'
     end
   end
 
