@@ -147,9 +147,10 @@ namespace :fixme do
   end
 
   def outdated_fixme_files
-    local_fixme_files.reject do |local|
+    local_fixme_files.select do |local|
       upstream     = fixme_project_path( local )
-      Digest::SHA256.file( local ) == Digest::SHA256.file( upstream )
+      upstream.exist? &&
+        ( Digest::SHA256.file( local ) != Digest::SHA256.file( upstream ) )
     end
   end
 
