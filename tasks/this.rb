@@ -13,7 +13,7 @@ class ThisProject
   attr_accessor :email
 
   # The homepage of this project
-  attr_accessor :homepage 
+  attr_accessor :homepage
 
   # The regex of files to exclude from the manifest
   attr_accessor :exclude_from_manifest
@@ -180,8 +180,8 @@ class ThisProject
   def description_section
     section_of( 'README.md', 'DESCRIPTION')
   end
- 
- # Internal: Return the summary text from the README 
+
+  # Internal: Return the summary text from the README
   def summary
     description_section.first
   end

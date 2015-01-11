@@ -11,6 +11,7 @@ This.ruby_gemspec do |spec|
   spec.add_development_dependency( 'minitest' , '~> 5.4' )
   spec.add_development_dependency( 'rdoc'     , '~> 4.1' )
   spec.add_development_dependency( 'simplecov', '~> 0.9' )
+
 end
 
 load 'tasks/default.rake'
