@@ -80,7 +80,7 @@ begin
     ENV['COVERAGE'] = 'true'
     Rake::Task[:test].execute
   end
-  CLOBBER << FileList["coverage/**/*"] if File.directory?( 'coverage' )
+  CLOBBER << 'coverage' if File.directory?( 'coverage' )
 rescue LoadError
   This.task_warning( 'simplecov' )
 end
