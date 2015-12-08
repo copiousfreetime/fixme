@@ -2,7 +2,6 @@
 
 * [Homepage](https://github.com/copiousfreetime/FIXME/)
 * [Github Project](https://github.com/copiousfreetime/FIXME)
-* email jeremy at hinegardner dot org
 
 ## DESCRIPTION
 
