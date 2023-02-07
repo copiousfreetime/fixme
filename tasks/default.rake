@@ -143,7 +143,8 @@ namespace :fixme do
   end
 
   def local_fixme_files
-    This.manifest.select { |p| p =~ %r|^tasks/| }
+    local_files = This.manifest.select { |p| p =~ %r|^tasks/| }
+    local_files << ".semaphore/semaphore.yml"
   end
 
   def outdated_fixme_files
