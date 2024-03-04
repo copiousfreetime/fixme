@@ -11,4 +11,3 @@ tasks/man.rake
 tasks/this.rb
 test/test_helper.rb
 test/test_version.rb
-.semaphore/semaphore.yml
