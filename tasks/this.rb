@@ -15,8 +15,8 @@ class ThisProject
   # The homepage of this project
   attr_accessor :homepage
 
-  # The regex of files to exclude from the manifest
-  attr_accessor :exclude_from_manifest
+  # The regex of files to include in the manifest
+  attr_accessor :include_in_manifest
 
   # The hash of Gem::Specifications keyed' by platform
   attr_accessor :gemspecs
@@ -28,11 +28,9 @@ class ThisProject
   #
   # Yields self
   def initialize(&block)
-    @exclude_from_manifest = Regexp.union(/\.(git|DS_Store|semaphore)/,
-                                          /^(doc|coverage|pkg|tmp|Gemfile(\.lock)?)/,
-                                          /^[^\/]+\.gemspec/,
-                                          /\.(swp|jar|bundle|so|rvmrc|travis.yml|byebug_history|fossa.yml|ruby-version)$/,
-                                          /~$/)
+    @include_in_manifest = Regexp.union(/\Alib/, /\Aexe/, /\Aext/,
+                                        /\A[^\/]+\.(gemspec|txt|md|rdoc|adoc)\Z/
+                                       )
     @gemspecs              = Hash.new
     yield self if block_given?
   end
@@ -75,7 +73,7 @@ class ThisProject
 
   # Internal: print out a warning about the give task
   def task_warning( task )
-    warn "WARNING: '#{task}' tasks are not defined. Please run 'rake develop'"
+    warn "WARNING: '#{task}' tasks are not defined. Please run 'bin/setup'"
   end
 
   # Internal: Return the full path to the file that is relative to the project
@@ -142,14 +140,15 @@ class ThisProject
       spec.license     = license
 
       spec.files       = manifest
+      spec.bindir      = 'exe'
       spec.executables = spec.files.grep(/^bin/) { |f| File.basename(f) }
-      spec.test_files  = spec.files.grep(/^spec/)
+      spec.test_files  = []
 
       spec.extra_rdoc_files += spec.files.grep(/(txt|rdoc|md)$/)
       spec.rdoc_options = [ "--main"  , 'README.md',
                             "--markup", "tomdoc" ]
 
-      spec.required_ruby_version = '>= 2.3.0'
+      spec.required_ruby_version = '>= 3.0.0'
     end
   end
 
@@ -197,7 +196,7 @@ class ThisProject
   end
 
   def license
-    license_file = project_path("LICENSE")
+    license_file = project_path("LICENSE.txt")
     line = license_file.readlines.first
     line.split(/\s+/).first
   end

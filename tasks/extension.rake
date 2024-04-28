@@ -1,7 +1,7 @@
 # To be used if the gem has extensions.
 # If this task set is inclueded then you will need to also have
 #
-#   spec.add_development_dependency( 'rake-compiler', '~> 0.8.1' )
+# gem "rake-compiler", "~> 1.0" in your Gemfile
 #
 # in your top level rakefile
 begin

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+#
 # vim: syntax=ruby
 load 'tasks/this.rb'
 
@@ -7,11 +9,15 @@ This.email    = "jeremy@copiousfreetime.org"
 This.homepage = "http://github.com/copiousfreetime/#{ This.name }"
 
 This.ruby_gemspec do |spec|
-  spec.add_development_dependency( 'rake'     , '~> 13.0')
-  spec.add_development_dependency( 'minitest' , '~> 5.17' )
-  spec.add_development_dependency( 'rdoc'     , '~> 6.4' )
-  spec.add_development_dependency( 'simplecov', '~> 0.21')
 
+  spec.metadata = {
+    "bug_tracker_uri" => "https://github.com/copiousfreetime/#{This.name}/issues",
+    "changelog_uri" => "https://github.com/copiousfreetime/#{This.name}/blob/master/HISTORY.md",
+    "homepage_uri" => "https://github.com/copiousfreetime/#{This.name}",
+    "source_code_uri" => "https://github.com/copiousfreetime/#{This.name}",
+    "label" => This.name,
+    "rubygems_mfa_required" => "true",
+  }
 end
 
 load 'tasks/default.rake'
