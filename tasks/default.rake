@@ -71,6 +71,12 @@ rescue LoadError
   This.task_warning("rubocop")
 end
 
+def git_files
+  IO.popen(%w[git ls-files -z], chdir: This.project_root, err: IO::NULL) do |ls|
+    ls.readlines("\x0", chomp: true)
+  end
+end
+
 #------------------------------------------------------------------------------
 # Manifest - We want an explicit list of thos files that are to be packaged in
 #            the gem. Most of this is from Hoe.
@@ -96,10 +102,7 @@ namespace "manifest" do
 
   desc "Generate the manifest"
   task generate: :clean do
-    files = IO.popen(%w[git ls-files -z], chdir: This.project_root, err: IO::NULL) do |ls|
-      ls.readlines("\x0", chomp: true).grep(This.include_in_manifest)
-    end
-
+    files = git_files.grep(This.include_in_manifest)
     files.sort!
     File.open("Manifest.txt", "w") do |f|
       f.puts files.join("\n")
@@ -119,8 +122,10 @@ def fixme_project_path(subtree)
 end
 
 def local_fixme_files
-  local_files = This.manifest.grep(%r{^tasks/})
+  local_files = Dir.glob("tasks/**/*")
   local_files.concat(Dir.glob(".semaphore/*"))
+  local_files.concat(Dir.glob(".rubocop.yml"))
+  local_files.concat(Dir.glob("bin/*"))
 end
 
 def outdated_fixme_files
@@ -151,6 +156,13 @@ namespace :fixme do
         prefix = "FIXME: #{file}:#{idx + 1}".ljust(42)
         puts "#{prefix} => #{line.strip}" if /fixme/i.match?(line)
       end
+    end
+  end
+
+  desc "See the local fixme files"
+  task :local_files do
+    local_fixme_files.each do |f|
+      puts f
     end
   end
 

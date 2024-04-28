@@ -32,7 +32,7 @@ class ThisProject
   def initialize
     @include_in_manifest = Regexp.union(/\Alib/, /\Aexe/, /\Aext/,
                                         %r{\A[^/]+\.(gemspec|txt|md|rdoc|adoc)\Z})
-    @gemspecs              = {}
+    @gemspecs = {}
     yield self if block_given?
   end
 
@@ -140,7 +140,7 @@ class ThisProject
 
       spec.files       = manifest
       spec.bindir      = "exe"
-      spec.executables = spec.files.grep(/^bin/) { |f| File.basename(f) }
+      spec.executables = spec.files.grep(/^exe/) { |f| File.basename(f) }
       spec.test_files  = []
 
       spec.extra_rdoc_files += spec.files.grep(/(txt|rdoc|md)$/)
