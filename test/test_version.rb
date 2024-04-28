@@ -1,7 +1,9 @@
-require 'test_helper'
-require 'fixme'
+# frozen_string_literal: true
 
-class TestVersion < ::Minitest::Test
+require "test_helper"
+require "fixme"
+
+class TestVersion < Minitest::Test
   def test_version_constant_match
     assert_match(/\A\d+\.\d+\.\d+\Z/, Fixme::VERSION)
   end

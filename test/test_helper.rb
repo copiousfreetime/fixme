@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'simplecov'
+require "simplecov"
 
 if ENV["COVERAGE"]
   SimpleCov.start do
@@ -10,6 +10,6 @@ if ENV["COVERAGE"]
   end
 end
 
-require 'minitest/autorun'
-require 'minitest/focus'
-require 'minitest/pride'
+require "minitest/autorun"
+require "minitest/focus"
+require "minitest/pride"
