@@ -128,6 +128,10 @@ def local_fixme_files
   local_files.concat(Dir.glob("bin/*"))
 end
 
+def upstream_fixme_files
+  fixme_project_root.glob("{tasks/**/*,.semaphore/*,.rubocop.yml,bin/*}")
+end
+
 def outdated_fixme_files
   local_fixme_files.select do |local|
     upstream = fixme_project_path(local)
@@ -166,6 +170,13 @@ namespace :fixme do
     end
   end
 
+  desc "See the upstream fixme files"
+  task :upstream_files do
+    upstream_fixme_files.each do |f|
+      puts f
+    end
+  end
+
   desc "See if the fixme tools are outdated"
   task :outdated do
     if fixme_up_to_date?
@@ -174,6 +185,18 @@ namespace :fixme do
       outdated_fixme_files.each do |f|
         puts "#{f} is outdated"
       end
+    end
+  end
+
+  desc "Show the diff between the local and upstream fixme files"
+  task :diff do
+    outdated_fixme_files.each do |f|
+      upstream = fixme_project_path(f)
+      puts "===> Start Diff for #{f}"
+      output = `diff -du #{upstream} #{f}`
+      puts output unless output.empty?
+      puts "===> End Diff for #{f}"
+      puts
     end
   end
 
