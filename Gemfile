@@ -5,7 +5,7 @@ source "https://rubygems.org"
 gemspec
 
 group :development, :test do
-  #gem "debug", "~> 1.0", require: false
+  # gem "debug", "~> 1.0", require: false
   gem "heel", require: false
 
   gem "minitest", "~> 5.11"
@@ -23,7 +23,7 @@ group :development, :test do
   gem "rubocop-thread_safety", "~> 0.5", require: false
 
   gem "rubocop-md", "~> 1.2", require: false
-  #gem "rubocop-rails", "~> 2.11", require: false
+  # gem "rubocop-rails", "~> 2.11", require: false
 
   gem "simplecov", "~> 0.21", require: false
 end

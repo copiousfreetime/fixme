@@ -103,6 +103,7 @@ PLATFORMS
   arm64-darwin-23
   java
   ruby
+  universal-java-21
 
 DEPENDENCIES
   fixme!
