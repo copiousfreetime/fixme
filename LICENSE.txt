@@ -1,22 +1,3 @@
-## FIXME
-
-* [Homepage](https://github.com/copiousfreetime/FIXME/)
-* [Github Project](https://github.com/copiousfreetime/FIXME)
-
-## DESCRIPTION
-
- FIXME
-
-## FEATURES
-
-  FIXME
-
-## Examples
-
-## MIT LICENSE
-
-<https://opensource.org/license/mit>
-
 MIT License
 
 Copyright (c) Jeremy Hinegardner
