@@ -1,13 +1,6 @@
 CONTRIBUTING.md
 HISTORY.md
-LICENSE
+LICENSE.txt
 Manifest.txt
 README.md
-Rakefile
 lib/fixme.rb
-tasks/default.rake
-tasks/extension.rake
-tasks/man.rake
-tasks/this.rb
-test/test_helper.rb
-test/test_version.rb
