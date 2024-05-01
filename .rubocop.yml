@@ -63,6 +63,11 @@ Style/Documentation:
   Exclude:
     - 'test/**/*'
 
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+  ConsistentQuotesInMultiline: false
+
 Style/SafeNavigation:
   Enabled: false
 
@@ -73,11 +78,6 @@ Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: consistent_comma
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: consistent_comma
-
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
-  ConsistentQuotesInMultiline: false
 
 ThreadSafety/InstanceVariableInClassMethod:
   Enabled: false
