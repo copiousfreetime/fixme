@@ -137,7 +137,7 @@ GEM
     stringio (3.1.0)
     unicode-display_width (2.5.0)
     webrick (1.8.1)
-    zeitwerk (2.7.1)
+    zeitwerk (2.6.18)
 
 PLATFORMS
   arm64-darwin
@@ -226,7 +226,7 @@ CHECKSUMS
   stringio (3.1.0) sha256=c1f6263ae03a15025e51194ab19b06b15e06adcaaedb7f5f6c06ab60f5d67718
   unicode-display_width (2.5.0) sha256=7e7681dcade1add70cb9fda20dd77f300b8587c81ebbd165d14fd93144ff0ab4
   webrick (1.8.1) sha256=19411ec6912911fd3df13559110127ea2badd0c035f7762873f58afc803e158f
-  zeitwerk (2.7.1) sha256=0945986050e4907140895378e74df1fe882a2271ed087cc6c6d6b00d415a2756
+  zeitwerk (2.6.18) sha256=bd2d213996ff7b3b364cd342a585fbee9797dbc1c0c6d868dc4150cc75739781
 
 BUNDLED WITH
    2.6.3
