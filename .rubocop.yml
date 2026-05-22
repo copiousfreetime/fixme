@@ -10,6 +10,7 @@ AllCops:
   NewCops: enable
   Exclude:
     - 'coverage/**/*'
+    - 'bin/**/*'
     - 'doc/**/*'
     - 'pkg/**/*'
     - 'tmp/**/*'
@@ -79,5 +80,5 @@ Style/TrailingCommaInArrayLiteral:
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: consistent_comma
 
-ThreadSafety/InstanceVariableInClassMethod:
+ThreadSafety/ClassInstanceVariable:
   Enabled: false
